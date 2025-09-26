@@ -1,0 +1,114 @@
+:root{
+  --fondo: #222328;        /* fondo general */
+  --sidebar-bg: #2a2d34;   /* sidebar color base (oscuro) */
+  --sidebar-active: #16ad8a;/* verde activo/hover */
+  --card: #222328;         /* cards: mismo que fondo para "flotar" */
+  --font: #f1f1f1;         /* texto */
+  --naranja: #ff8c42;      /* color de líneas/barras */
+  --sombra: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Reset y base */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  background: var(--fondo);
+  color: var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Layout */
+.dashboard { display: flex; min-height: 100vh; }
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: var(--sidebar-bg);
+  padding: 28px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 2px 0 14px rgba(0,0,0,0.45);
+}
+.brand { font-size: 1.4rem; margin: 0 0 8px 0; color: var(--font); }
+
+/* Links */
+.nav-link {
+  color: var(--font);
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: background .18s, color .18s;
+  display: inline-block;
+}
+.nav-link:hover { background: var(--sidebar-active); color: #fff; }
+.nav-link.active { background: var(--sidebar-active); color: #fff; }
+
+/* Main content */
+.main-content {
+  flex: 1;
+  padding: 28px;
+}
+
+/* Header */
+.title { margin: 0; font-weight: 600; }
+
+/* Grid charts: two columns on desktop, 1 in mobile */
+.grid-charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-bottom: 22px;
+}
+.chart-card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: var(--sombra);
+}
+
+/* Make canvas tall enough */
+.chart-card canvas { width: 100% !important; height: 320px !important; }
+
+/* Prices row */
+.prices-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.price-card {
+  background: var(--card);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: var(--sombra);
+  text-align: center;
+}
+.price-value { font-size: 1.6rem; margin-top: 6px; color: var(--naranja); font-weight: 700; }
+.price-change { margin-top: 6px; font-weight: 600; }
+
+/* Responsive behavior */
+/* - In mobile: hide sidebar (off-canvas), show hamburger; main uses full width & cards stacks */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-110%);
+    transition: transform .25s ease;
+    z-index: 1200;
+  }
+  .sidebar.show { transform: translateX(0); }
+
+  .main-content { padding: 16px; }
+
+  .grid-charts { grid-template-columns: 1fr; }
+  .prices-row { grid-template-columns: 1fr; margin-bottom: 60px; }
+
+  /* make nav (top) visible with hamburger (we included a separate small nav in HTML) */
+}
+
+/* small visual tweaks */
+h1.title { font-size: 1.4rem; }
+h3, h4 { margin: 0 0 12px 0; font-weight: 600; }
