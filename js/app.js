@@ -1,35 +1,41 @@
-const apiURL = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,binancecoin&vs_currencies=usd&include_24hr_change=true";
+// app.js
 
-    async function fetchPrices() {
-      try {
-        const response = await fetch(apiURL);
-        const data = await response.json();
+async function getPrices() {
+  try {
+    const res = await fetch(
+      "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,binancecoin&vs_currencies=usd&include_24hr_change=true"
+    );
+    const data = await res.json();
 
-        // BTC
-        document.getElementById("btc-price").textContent = `$${data.bitcoin.usd}`;
-        const btcChange = data.bitcoin.usd_24h_change.toFixed(2);
-        const btcChangeEl = document.getElementById("btc-change");
-        btcChangeEl.textContent = `${btcChange}%`;
-        btcChangeEl.style.color = btcChange >= 0 ? "green" : "red";
+    function updateCrypto(idPrice, idChange, value, change) {
+      const priceEl = document.getElementById(idPrice);
+      const changeEl = document.getElementById(idChange);
+      if (!priceEl || !changeEl) {
+        console.error("No existe el elemento con id:", idPrice, idChange);
+        return;
+      }
 
-        // ETH
-        document.getElementById("eth-price").textContent = `$${data.ethereum.usd}`;
-        const ethChange = data.ethereum.usd_24h_change.toFixed(2);
-        const ethChangeEl = document.getElementById("eth-change");
-        ethChangeEl.textContent = `${ethChange}%`;
-        ethChangeEl.style.color = ethChange >= 0 ? "green" : "red";
+      priceEl.textContent = "$" + value.toLocaleString();
 
-        // BNB
-        document.getElementById("bnb-price").textContent = `$${data.binancecoin.usd}`;
-        const bnbChange = data.binancecoin.usd_24h_change.toFixed(2);
-        const bnbChangeEl = document.getElementById("bnb-change");
-        bnbChangeEl.textContent = `${bnbChange}%`;
-        bnbChangeEl.style.color = bnbChange >= 0 ? "green" : "red";
-      } catch (error) {
-        console.error("Error al obtener datos:", error);
+      if (change >= 0) {
+        changeEl.textContent = "▲ " + change.toFixed(2) + "%";
+        changeEl.style.color = "green";
+      } else {
+        changeEl.textContent = "▼ " + change.toFixed(2) + "%";
+        changeEl.style.color = "red";
       }
     }
 
-    // Actualizacada 30 segundos
-    fetchPrices();
-    setInterval(fetchPrices, 30000);
+    updateCrypto("btc-price", "btc-change", data.bitcoin.usd, data.bitcoin.usd_24h_change);
+    updateCrypto("eth-price", "eth-change", data.ethereum.usd, data.ethereum.usd_24h_change);
+    updateCrypto("bnb-price", "bnb-change", data.binancecoin.usd, data.binancecoin.usd_24h_change);
+
+  } catch (error) {
+    console.error("Error al obtener precios:", error);
+  }
+}
+
+// Ejecutar al cargar la página
+getPrices();
+// Repetir cada 5 segundos (5000 ms)
+setInterval(getPrices, 5000);
