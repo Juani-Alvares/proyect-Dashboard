@@ -1,27 +1,39 @@
-<h1 align="center">Hola, Bienvenido!! 👋👋</h1>
+# 📊 Crypto Dashboard
 
-###
+Un dashboard moderno y responsive para visualizar en **tiempo real** el precio y variación de las principales criptomonedas:  
+**Bitcoin (BTC)**, **Ethereum (ETH)** y **Binance Coin (BNB)**.  
 
-<br clear="both">
+La web está construida con **HTML**, **CSS**, **Bootstrap** y **JavaScript**, consumiendo datos desde la API pública de [CoinGecko](https://www.coingecko.com/).
 
-<h2 align="center">Dashboard</h2>
+---
 
-###
+## ✨ Características
 
-<p align="left">💻🪙 Este Dashboard fue pensado para uso personal, la idea es poder ver precios y % de suma o bajada de las criptomonedas mas importantes del momento. Su información es sacada de una api la cual da sus precios y gráficos, cada 5s los graficos y cada 30s el precio de la crypto<br>Este es mi primer trabajo con Java y una Api</p>
+- 🔄 **Actualización automática** cada 5 segundos.  
+- 📱 **Diseño responsive**: compatible con PC, tablets y celulares.  
+- 🎨 **Estética minimalista y moderna** con colores oscuros y cards blancas.  
+- 📈 **Indicadores visuales**:  
+  - Verde ▲ cuando el precio sube.  
+  - Rojo ▼ cuando el precio baja.  
+- 🌐 **Secciones del proyecto**:
+  - **Dashboard principal** → precios en tiempo real.
+  - **Gráficos** → evolución de las criptos con charts dinámicos.
+  - **Historia** → explicación de BTC, ETH y BNB.
 
-###
+---
 
-<h2 align="left">Lenguajes Utilizados:</h2>
+## 🛠️ Tecnologías utilizadas
 
-###
+- **HTML5**  
+- **CSS3** (con estilos personalizados)  
+- **Bootstrap 5**  
+- **JavaScript (ES6)**  
+- **API CoinGecko**  
 
-<div align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40" alt="javascript logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="40" alt="html5 logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="40" alt="css logo"  />
-</div>
+---
 
-###
+## 🚀 Instalación y uso
+
+1. Clona este repositorio:  
+   ```bash
+   git clone https://github.com/Juani-Alvares/proyect-Dashboard.git
