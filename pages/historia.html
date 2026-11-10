@@ -1,121 +1,257 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Historia de las Criptomonedas</title>
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Fuente -->
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,800;1,800&display=swap" rel="stylesheet">
-  <!-- CSS -->
-  <link rel="stylesheet" href="../style.css">
-</head>
-
-<body>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="../index.html">Nitoi </a>
-      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="./graficos.html">Gráficos</a></li>
-          <li class="nav-item"><a class="nav-link" href="./historia.html">Historia</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero">
-    <h1>La Historia de las Criptomonedas</h1>
-    <p>Descubre cómo Bitcoin, Ethereum y Binance Coin cambiaron el mundo financiero.</p>
-  </section>
-
-  <!-- CONTENIDO -->
-  <div class="container my-5">
-    <div class="row g-4">
-
-      <!-- Bitcoin -->
-      <div class="col-md-4">
-        <div class="card-historia p-4 h-100">
-          <div class="d-flex align-items-center mb-3">
-            <img src="../image/btc-logo.png" alt="Bitcoin" class="crypto-logo">
-            <h5 class="card-title mb-0">Bitcoin (BTC)</h5>
-          </div>
-          <p>
-            Bitcoin nació en 2009 de la mano de Satoshi Nakamoto como la primera criptomoneda descentralizada.
-            Creada para ser un sistema financiero sin intermediarios, su suministro está limitado a 21 millones de monedas.
-            Desde entonces, se ha consolidado como la referencia del mundo cripto y una reserva de valor digital.
-          </p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101214" />
+    <meta
+      name="description"
+      content="Seguí Bitcoin, Ethereum y BNB: cotizaciones, gráficos históricos y un conversor en una sola pantalla."
+    />
+    <title>Historia cripto · CryptoDash</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script src="../js/app.js" defer></script>
+  </head>
+  <body data-page="history">
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+    <aside class="sidebar">
+      <a class="brand" href="../index.html"
+        ><span class="brand-mark">₿</span>Crypto<span>Dash</span></a
+      >
+      <p class="nav-label">EXPLORAR</p>
+      <nav aria-label="Navegación principal">
+        <a aria-label="Vista general" class="nav-link" href="../index.html"
+          ><svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <rect x="3" y="3" width="7" height="7" rx="1.5" />
+            <rect x="14" y="3" width="7" height="7" rx="1.5" />
+            <rect x="3" y="14" width="7" height="7" rx="1.5" />
+            <rect x="14" y="14" width="7" height="7" rx="1.5" /></svg
+          ><span>Vista general</span></a
+        ><a aria-label="Gráficos" class="nav-link" href="../pages/graficos.html"
+          ><svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M3 3v18h18M6 15l4-5 4 3 6-8" /></svg
+          ><span>Gráficos</span></a
+        ><a
+          aria-label="Historia cripto"
+          class="nav-link selected"
+          aria-current="page"
+          href="../pages/historia.html"
+          ><svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 5v16M3 3c4-1 6 0 9 2 3-2 5-3 9-2v15c-4-1-6 0-9 2-3-2-5-3-9-2Z"
+            /></svg
+          ><span>Historia cripto</span><span class="nav-dot"></span
+        ></a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="network">
+          <span class="status-dot"></span>El mercado nunca duerme
         </div>
+        <p>Una perspectiva más clara<br />del universo cripto.</p>
+        <span class="version">CRYPTODASH / 01</span>
       </div>
-
-      <!-- Ethereum -->
-      <div class="col-md-4">
-        <div class="card-historia p-4 h-100">
-          <div class="d-flex align-items-center mb-3">
-            <img src="../image/eth-logo.jpg" alt="Ethereum" class="crypto-logo">
-            <h5 class="card-title mb-0">Ethereum (ETH)</h5>
-          </div>
-          <p>
-            Ethereum fue lanzado en 2015 por Vitalik Buterin y un grupo de desarrolladores visionarios.
-            Introdujo los contratos inteligentes, permitiendo la creación de aplicaciones descentralizadas (dApps).
-            Hoy es la base de las finanzas descentralizadas (DeFi), los NFTs y gran parte de la innovación blockchain.
-          </p>
+    </aside>
+    <div class="workspace">
+      <header class="topbar">
+        <div class="breadcrumb">
+          Workspace <span>/</span> <strong>Historia cripto</strong>
         </div>
-      </div>
-
-      <!-- Binance Coin -->
-      <div class="col-md-4">
-        <div class="card-historia p-4 h-100">
-          <div class="d-flex align-items-center mb-3">
-            <img src="../image/BNB-logo.png" alt="BNB" class="crypto-logo">
-            <h5 class="card-title mb-0">Binance Coin (BNB)</h5>
-          </div>
-          <p>
-            Binance Coin fue creada en 2017 por el exchange Binance.
-            Nació como un token en Ethereum, pero pronto migró a su propia blockchain: Binance Smart Chain.
-            Actualmente, BNB se usa para pagar comisiones, participar en proyectos y en todo el ecosistema Binance.
-          </p>
+        <div class="topbar-right">
+          <span class="market-label"
+            ><span class="status-dot"></span>Mercado cripto</span
+          ><span class="avatar" title="Juan Ignacio Alvares">JA</span>
         </div>
-      </div>
-
+      </header>
+      <main id="main">
+        <section class="page-heading">
+          <div>
+            <p class="eyebrow">ENTENDÉ LO QUE SEGUÍS</p>
+            <h1>Tres activos. Tres historias.</h1>
+            <p class="subtitle">
+              Un recorrido por las ideas y los hitos detrás de Bitcoin, Ethereum
+              y BNB.
+            </p>
+          </div>
+        </section>
+        <nav class="history-jump" aria-label="Saltar a un activo">
+          <a href="#bitcoin"><span>2009</span>Bitcoin ↘</a
+          ><a href="#ethereum"><span>2015</span>Ethereum ↘</a
+          ><a href="#binancecoin"><span>2017</span>BNB ↘</a>
+        </nav>
+        <div class="timeline">
+          <article class="history-entry" id="bitcoin">
+            <div class="history-year">
+              <span>01</span><strong>2009</strong>
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="panel history-content">
+              <div class="history-card-heading">
+                <span class="coin-identity"
+                  ><img
+                    src="../image/btc-logo.png"
+                    alt=""
+                    width="44"
+                    height="44"
+                  /><strong>Bitcoin</strong></span
+                ><span class="history-category">EL ORIGEN</span>
+              </div>
+              <h2>El punto de partida.</h2>
+              <p>
+                Una red de dinero entre personas, sin un intermediario central.
+                El documento de Satoshi Nakamoto se publicó en 2008 y la red
+                comenzó a funcionar en enero de 2009.
+              </p>
+              <p>
+                Su emisión está limitada por el protocolo a 21 millones de BTC.
+                Las transacciones se validan mediante prueba de trabajo.
+              </p>
+              <div class="history-card-footer">
+                <div class="tags">
+                  <span>Prueba de trabajo</span><span>21 millones de BTC</span>
+                </div>
+                <a
+                  href="https://bitcoin.org/es/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Conocer Bitcoin ↗</a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="history-entry" id="ethereum">
+            <div class="history-year">
+              <span>02</span><strong>2015</strong>
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="panel history-content">
+              <div class="history-card-heading">
+                <span class="coin-identity"
+                  ><img
+                    src="../image/eth-logo.jpg"
+                    alt=""
+                    width="44"
+                    height="44"
+                  /><strong>Ethereum</strong></span
+                ><span class="history-category">LA EVOLUCIÓN</span>
+              </div>
+              <h2>Una blockchain que se puede programar.</h2>
+              <p>
+                Ethereum amplió las posibilidades de una blockchain con
+                contratos inteligentes: programas que se ejecutan en la red y
+                permiten crear aplicaciones descentralizadas.
+              </p>
+              <p>
+                La red se lanzó en 2015. En 2022, The Merge cambió su mecanismo
+                de consenso de prueba de trabajo a prueba de participación.
+              </p>
+              <div class="history-card-footer">
+                <div class="tags">
+                  <span>Contratos inteligentes</span
+                  ><span>Prueba de participación</span>
+                </div>
+                <a
+                  href="https://ethereum.org/es/history/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Explorar Ethereum ↗</a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="history-entry" id="binancecoin">
+            <div class="history-year">
+              <span>03</span><strong>2017</strong>
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="panel history-content">
+              <div class="history-card-heading">
+                <span class="coin-identity"
+                  ><img
+                    src="../image/BNB-logo.png"
+                    alt=""
+                    width="44"
+                    height="44"
+                  /><strong>BNB</strong></span
+                ><span class="history-category">EL ECOSISTEMA</span>
+              </div>
+              <h2>Del token a un ecosistema.</h2>
+              <p>
+                BNB nació en 2017 como un token de Ethereum. En 2019 migró a
+                Binance Chain; Binance Smart Chain se lanzó después, en 2020.
+              </p>
+              <p>
+                En 2022, el ecosistema adoptó el nombre BNB Chain. BNB se
+                utiliza, entre otros fines, para pagar las comisiones de
+                transacción de BNB Smart Chain.
+              </p>
+              <div class="history-card-footer">
+                <div class="tags">
+                  <span>Comisiones de red</span><span>BNB Chain</span>
+                </div>
+                <a
+                  href="https://www.bnbchain.org/en/blog/bsc-is-now-bnb-chain-the-infrastructure-for-the-metafi-universe"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Descubrir BNB ↗</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="history-end">
+          <span class="eyebrow">LA HISTORIA SIGUE</span>
+          <h2>Ahora, mirá los números.</h2>
+          <a class="button primary" href="../pages/graficos.html"
+            >Explorar gráficos
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M5 12h14M13 6l6 6-6 6" /></svg
+          ></a>
+        </div>
+      </main>
+      <footer>
+        <span>© 2026 Juan Ignacio Alvares</span
+        ><span
+          >Datos de
+          <a
+            href="https://www.coingecko.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >CoinGecko ↗</a
+          ></span
+        >
+      </footer>
     </div>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-social">
-      <a href="https://instagram.com" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-      </a>
-      <a href="https://twitter.com" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
-      </a>
-      <a href="https://github.com" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
-      </a>
-    </div>
-    <div class="footer-links">
-      <a href="#">Inicio</a> | 
-      <a href="#">Gráficos</a> | 
-      <a href="#">Historia</a>
-    </div>
-    <div>
-      © 2025 - Juan Ignacio Alvares
-    </div>
-  </footer>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
-</body>
+  </body>
 </html>
